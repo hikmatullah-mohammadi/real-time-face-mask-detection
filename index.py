@@ -12,8 +12,8 @@ loaded_model = keras.models.load_model('face-mask-detection-model.h5')
      
 # get the webcam
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 480) # height
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 640) # width
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480) # height
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640) # width
 
 face_detector = cv2.CascadeClassifier('./face_haarcascade/haarcascade_frontalface_default.xml')
 face_img_size = (100, 100)
@@ -51,7 +51,7 @@ while True:
             img = utils.display_result(img, is_mask, face_loc)        
             
     # show the image
-    cv2.putText(img, 'Press "q" to quit' , (0, 10), 0, .5, (0, 0, 255), 1)
+    cv2.putText(img, 'Press "q" to quit' , (0, 15), 0, .5, (0, 0, 255), 2)
     cv2.imshow('Face Detection', img)
     
     # quit when pressed 'q'
